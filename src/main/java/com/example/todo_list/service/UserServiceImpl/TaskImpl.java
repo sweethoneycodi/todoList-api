@@ -42,10 +42,10 @@ public class TaskImpl implements TaskService {
 
     @Override
     public List<TaskDto> getAllTask() {
-        TaskDto allTasks = new TaskDto();
+        List<TaskDto> allTasks = (List<TaskDto>) new TaskDto();
         List<Task> tasks = new ArrayList<>();
-        tasks.stream().map(()->allTasks).collect(Collectors.toList())
+        tasks.stream().map(allTask -> allTasks).collect(Collectors.toList());
 
-        return null;
+        return allTasks;
     }
 }
